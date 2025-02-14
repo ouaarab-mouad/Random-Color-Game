@@ -70,18 +70,24 @@ def show_history():
 root = tk.Tk()
 root.title("🎨 Guess the RGB Game")
 root.geometry("500x650")
-root.configure(bg="#f4f4f4")
+
+# Load Background Image
+bg_image = tk.PhotoImage(file="background.png")  # Use a .png or .gif image
+
+# Create a Label with Background Image
+bg_label = tk.Label(root, image=bg_image)
+bg_label.place(relwidth=1, relheight=1)  # Make the image cover the whole window
 
 # Title label
-title_label = tk.Label(root, text="🎨 Guess the RGB Color!", font=("Arial", 20, "bold"), bg="#f4f4f4", fg="#333")
+title_label = tk.Label(root, text="🎨 Guess the RGB Color!", font=("Arial", 20, "bold"), fg="white", bg="black")
 title_label.pack(pady=20)
 
 # Instruction label
-rgb_label = tk.Label(root, text="", font=("Arial", 16, "bold"), bg="#f4f4f4", fg="#555")
+rgb_label = tk.Label(root, text="", font=("Arial", 16, "bold"), fg="yellow", bg="black")
 rgb_label.pack(pady=10)
 
 # Create a frame for color buttons
-button_frame = tk.Frame(root, bg="#f4f4f4")
+button_frame = tk.Frame(root, bg="black")
 button_frame.pack(pady=20)
 
 # Create buttons for color choices
@@ -92,7 +98,7 @@ for i in range(6):
     color_buttons.append(btn)
 
 # Result label
-result_label = tk.Label(root, text="", font=("Arial", 16, "bold"), bg="#f4f4f4")
+result_label = tk.Label(root, text="", font=("Arial", 16, "bold"), fg="white", bg="black")
 result_label.pack(pady=10)
 
 # Buttons for history and replay
